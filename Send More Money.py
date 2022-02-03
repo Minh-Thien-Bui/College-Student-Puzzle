@@ -26,18 +26,6 @@ print(answer)
 
 
 '''
-testList = [8, 5, 4, 2, 0, 9, 1, 7]
-send = testList[0] * 1000 + testList[1] * 100 + testList[2] * 10 + testList[3]
-more = testList[4] * 1000 + testList[5] * 100 + testList[6] * 10 + testList[1]
-money = testList[4] * 10000 + testList[5] * 1000 + testList[2] * 100 + testList[1] * 10 + testList[7]
-
-print(send + more)
-print(money)
-
- SEND
-+MORE
-MONEY
-
 01234567
 SENDMORY
 95671082
