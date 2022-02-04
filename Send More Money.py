@@ -1,4 +1,5 @@
 from itertools import permutations
+from time import time
 
 def checkList(testList):
     send = testList[0] * 1000 + testList[1] * 100 + testList[2] * 10 + testList[3]
@@ -9,6 +10,7 @@ def checkList(testList):
         for index in testList:
             answer.append(index)
 
+startTime = time()
 numList = []
 answer = []
 
@@ -26,6 +28,8 @@ for permutation in permList:
 print(len(permList))
 print(answer)
 
+endTime = time()
+print(endTime - startTime)
 
 '''
 01234567
