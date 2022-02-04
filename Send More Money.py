@@ -19,7 +19,9 @@ permList = list(permutations(numList, 8))
 
 for permutation in permList:
     if permutation[0] != 0 and permutation[4] != 0:
-        checkList(permutation)
+        #Check if (D + E = Y) or (D + E = Y + 10) Contributed by Nathaniel Mutkus
+        if permutation[3] + permutation[1] == permutation[7] or permutation[3] + permutation[1] == permutation[7] + 10:
+            checkList(permutation)
 
 print(len(permList))
 print(answer)
