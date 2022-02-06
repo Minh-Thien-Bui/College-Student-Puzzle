@@ -29,14 +29,14 @@ def heuristicCheck(testList):
     while index >= 0:
         sumIndex = send[index] + more[index]
         totalIndex = [
-            money[index + 1],
-            money[index + 1] + 10
+            money[index + 1] + 10,
+            money[index + 1]
             ]
 
         if(sumIndex not in totalIndex):
             return False
         
-        elif(sumIndex == totalIndex[1]):
+        elif(sumIndex == totalIndex[0]):
             if(index == 0):
                 for i in testList:
                     answer.append(i)
