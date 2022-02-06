@@ -64,29 +64,26 @@ def heuristicCheck(testList):
         testList[7]
         ]
 
-    index = len(send) - 1
+    index = 0
+    sumIndex = 0
+    totalIndex = 0
     
-    while index >= 0:
-        sumIndex = send[index] + more[index]
-        totalIndex = [
-            money[index + 1] + 10,
-            money[index + 1]
-            ]
+    while index < len(send):
+        sumIndex += send[len(send) - 1 - index] * 10 ** index
+        sumIndex += more[len(more) - 1 - index] * 10 ** index
+        totalIndex += money[len(money) - 1 - index] * 10 ** index
 
-        if(sumIndex not in totalIndex):
+        if(sumIndex != totalIndex and sumIndex != totalIndex + 10 ** (index + 1)):
             return False
         
-        elif(sumIndex == totalIndex[0]):
-            if(index == 0):
-                for i in testList:
-                    answer.append(i)
-                
-                return True
+        else:
+            index += 1
+    
+    if(sumIndex == totalIndex + 10 ** (index)):
+        return True
 
-            else:
-                send[index - 1] += 1
-
-        index -= 1
+    else:
+        return False
 
 def bruteForceCheck(testList):
     send = testList[0] * 1000 + testList[1] * 100 + testList[2] * 10 + testList[3]
@@ -114,6 +111,8 @@ for permutation in permList:
             break
 '''
         if heuristicCheck(permutation):
+            for i in permutation:
+                answer.append(i)
             break
 
         #Check if (D + E = Y) or (D + E = Y + 10) Contributed by Nathaniel Mutkus
